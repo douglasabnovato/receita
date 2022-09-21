@@ -206,6 +206,85 @@ Você pode usar os tamanhos de font abaixo como referência:
 - Subtítulos: `20px`;
 - Listas e parágrafo(s): `16px`;
 - Footer e legenda da imagem: `12px`;
+ 
+💡 Para usar a unidade de medida `rem` no lugar de `px`, basta dividir o valor em px por 16.
+**Exemplo:** 28 / 16 = 1.75rem
+
+💡 16 é o [tamanho de fonte padrão](https://app.rocketseat.com.br/node/nem-tudo-sao-pixels/lesson/distancias-absolutas-e-relativas) usado pela maioria dos navegadores. Se modificar o tamanho da font pelo elemento root ou html você deve dividir pelo valor alterado.
+Lembrando também que deve ser usado **ponto** e não vírgula. 
+ 
+💡 Para ver mais sobre como [trabalhar com textos nos CSS](https://app.rocketseat.com.br/node/app-bonito-ate-nos-textos)
+
+##### 🎨 Adicionando outros estilos a lista de ingredientes e modo de preparo
+
+No exemplo acima foi usado a propriedade line-height nas listas de ingredientes e modo de preparo. O valor usado foi de 26px.
+
+Nessa aula você pode ver mais sobre a [propriedade line-height](https://app.rocketseat.com.br/node/app-bonito-ate-nos-textos/group/mais-estilos-para-os-textos/lesson/line-height-e-text-transform)
+
+Para mudar o posicionamento dos boolets das listas, você pode usar a propriedade list-style-position. Os valores aceitos são: inside | outside. [Documentação](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position)
+
+##### 🎨 Como alinhar elementos ao centro da página?
+
+Existem diversas opções para alinhar elementos ao centro da página, algumas formas simples que podemos usar em alguns casos como o desse desafio, são:
+
+- Para alinhar textos e muitas vezes alguns outros elementos podemos usar  a propriedade text-align: center; , essa propriedade também aceita os valores start | end | left | right | center | justify | match-parent, então já fica aí a dica de como alinhar a legenda da imagem a direita (right). 😉
+
+Nessa aula você pode ver mais sobre a [propriedade text-align](https://app.rocketseat.com.br/node/app-bonito-ate-nos-textos/group/mais-estilos-para-os-textos/lesson/text-align)
+
+- Para alinhar outros tipos de elementos você pode tentar usar a propriedade margin: 0 auto;, por exemplo. Você pode adicionar qualquer valor de top e bottom, o importante é deixar como autoos valores de left e right. Também é importante lembrar que o width do elemento deve ser menor do que o da página para que seja possível visualizar o alinhamento ao centro.
+
+````css
+.recipe-container {
+  background: white;
+  width: 70%;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+````
+
+Em alguns outro desafios iremos ver outras formas de alinhar elementos como CSS Flexbox e CSS Grid, por exemplo.
+
+##### 🎨 Estilizando a imagem
+
+A imagem do layout acima tem uma largura(width) de 100% e altura(height) de 250px. Você pode usar essas medida para ajustar o tamanho da imagem.
+
+💡 Caso a imagem fique distorcida, você pode usar a propriedade `object-fit` e testar/escolher o valor(value) que melhor ajusta a imagem.
+Os valores aceitos são: fill | contain | cover | none | scale-down
+Documentação: [https://developer.mozilla.org/pt-BR/docs/Web/CSS/object-fit](https://developer.mozilla.org/pt-BR/docs/Web/CSS/object-fit)
+
+
+Para deixar as bordas arredondadas basta adicionar a propriedade `border-radius`, no layout do desafio todos os border-radius desse desafio são de 10px. Lembrando que você pode usar [essa dica](https://www.notion.so/2-Adicionando-os-estilos-com-CSS-f0797e51911e453eabdc99634a0356a0) para converter px para rem, se preferir.
+
+````html
+<figure class="recipe-image">
+    <img
+       src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=925&q=80"
+       alt="Foto Waffle"
+     />
+     <figcaption>Receita de waffle clássico</figcaption>
+</figure>
+````
+
+````css
+.recipe-image {
+  text-align: right;
+  font-size: 12px;
+  color: #8f8f8f;
+}
+
+.recipe-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+````
+
+##### 🎨 E quanto aos espaçamentos?
+
+Nesse primeiro momento você pode analisar a imagem e adicionar valores de margin e ou padding aproximados. Isso vai te treinar a analisar o layout e definir qual elemento fica melhor para adicionar essas propriedades. Não precisa se preocupar com valores exatos por enquanto. Em próximos desafios você vai poder praticar outras formas de analisar o layout de um projeto.
 
 ### 📅 Entrega
 
