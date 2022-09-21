@@ -9,11 +9,19 @@ body {
 }
 
 .top {
-    padding: 60px;
     text-align: center;
     background: #1abc9c;
     color: white;
     font-size: 30px;
+    width: 100%;
+    padding: 70px 0;
+    margin: 0 auto 0;
+}
+
+@media (max-width: 540px) {
+    .top {
+        width: 540px;
+    }
 }
 
 main {
